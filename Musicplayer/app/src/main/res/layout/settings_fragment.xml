@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <!-- Number of Songs Played -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of songs played:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/settingsSongsPlayedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Loop Mode Switch -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loop mode:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <Switch
+            android:id="@+id/settingsLoopSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- OK and Cancel Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/settingsCancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- OK Button -->
+        <Button
+            android:id="@+id/settingsOkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"/>
+    </LinearLayout>
+
+</LinearLayout>

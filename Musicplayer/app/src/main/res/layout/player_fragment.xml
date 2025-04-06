@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PlayerFragment"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Now Playing Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now playing:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/playerCurrentSongText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song Name"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Next Up Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next up:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/playerNextSongText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next Song"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Song List RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playerRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp"
+        tools:listitem="@layout/song_row"/>
+
+    <!-- Playback Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <!-- Playback Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <!-- Skip Back Button -->
+            <ImageButton
+                android:id="@+id/playerSkipBackButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_skip_previous_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Skip Back"
+                android:layout_marginEnd="20dp"/>
+
+            <!-- Play/Pause Button -->
+            <ImageButton
+                android:id="@+id/playerPlayPauseButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_play_arrow_black_24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Play/Pause"
+                android:layout_marginEnd="20dp"/>
+
+            <!-- Skip Forward Button -->
+            <ImageButton
+                android:id="@+id/playerSkipForwardButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_skip_next_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Skip Forward"
+                android:layout_marginEnd="20dp"/>
+        </LinearLayout>
+
+        <!-- Seek Bar and Time Displays -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/loopIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L"
+                android:textSize="36sp"
+                android:background="@color/white"/>
+
+            <!-- Time Passed -->
+            <TextView
+                android:id="@+id/playerTimePassedText"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Seek Bar -->
+            <SeekBar
+                android:id="@+id/playerSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"/>
+
+            <!-- Time Remaining -->
+            <TextView
+                android:id="@+id/playerTimeRemainingText"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:gravity="center"
+                android:layout_marginStart="8dp"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnShuffle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_shuffle_black_24dp"
+                android:contentDescription="Shuffle"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
